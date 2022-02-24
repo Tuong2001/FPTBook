@@ -12,7 +12,8 @@ namespace FPTBook.Controllers
         MultiShopDbContext db = new MultiShopDbContext();
         public ActionResult Index()
         {
-            return View();
+            var model = db.Categories.Where(c => c.Products.Count > 4).ToList();
+            return View(model);
         }
 
         public ActionResult About()
@@ -40,7 +41,7 @@ namespace FPTBook.Controllers
         }
         public ActionResult Special()
         {
-            var model = db.Products.Where(p => p.Special ==true);
+            var model = db.Products.Where(p => p.Special==true).Take(5);
             return PartialView("_BestSeller", model);
         }
     }

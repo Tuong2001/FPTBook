@@ -1,0 +1,29 @@
+﻿@model Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutDetail.cshtml";
+}
+
+<div>
+    <div>
+        <div class="nn-product-essential">
+            <div class="nn-product-detail-image col-sm-6">
+                <img class="img-responsive" src="/Content/img/products/@Model.Image" />
+            </div>
+            <div class="col-sm-6">
+                <h1>@Model.Name</h1>
+                <h3>Product Code:@Model.Id</h3> 
+                <h3>Category:<a href="/Product/Category?CategoryID=@Model.Category.Id">@Model.Category.Name</a></h3>
+                <h3>Avalability:@Model.Available</h3>
+                <h3>Price:@Model.UnitPrice</h3>
+                <button class="btn btn-danger" title="Add To Cart">
+                    <span>
+                        <span>Add To Cart</span>
+                    </span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+    <div></div>
+</div>

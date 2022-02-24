@@ -6,7 +6,7 @@
         public int Id { get; set; }
         public string NameVN { get; set; }
         public string Name { get; set; }
-       
-    
-        public virtual ICollection<Product> Products { get; set; }
+        public string Icon { get; set; }
+
+    public virtual ICollection<Product> Products { get; set; }
     }
